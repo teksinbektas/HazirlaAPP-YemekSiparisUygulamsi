@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="detailbinding"
+            type="com.example.bitirmeprojesi.ui.fragment.DetailFragment" />
+        
+        <variable
+            name="yemek"
+            type="com.example.bitirmeprojesi.data.entity.Yemekler" />
+
+        <variable
+            name="sepet"
+            type="com.example.bitirmeprojesi.data.entity.SepetYemek" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.fragment.DetailFragment">
+
+        <ImageView
+            android:id="@+id/buttonDetayHeart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/favorite_40dp_000000_fill0_wght400_grad0_opsz40"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/buttonDetayClose"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/close_40dp_000000_fill0_wght400_grad0_opsz40"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/imageDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="60dp"
+            app:layout_constraintBottom_toTopOf="@+id/buttonStock"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textUrunDetay"
+            tools:src="@tools:sample/avatars" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="10TL"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageDetail" />
+
+        <Button
+            android:id="@+id/buttonStock"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="160dp"
+            android:backgroundTint="@color/white"
+            android:text="1"
+            android:textAlignment="gravity"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black"
+            android:textSize="34sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/textAddBacket"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageDetail" />
+
+        <Button
+            android:id="@+id/buttonPlus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="36dp"
+            android:layout_marginBottom="192dp"
+            android:backgroundTint="#1565C0"
+            android:text="+"
+            android:textAlignment="gravity"
+            android:textSize="34sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonStock"
+            app:layout_constraintStart_toEndOf="@+id/buttonStock"
+            app:layout_constraintTop_toTopOf="@+id/buttonStock"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/buttonMinus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="36dp"
+            android:layout_marginBottom="204dp"
+            android:backgroundTint="#1565C0"
+            android:text="-"
+            android:textAlignment="gravity"
+            android:textSize="34sp"
+            app:cornerRadius="0dp"
+            app:layout_constraintBottom_toBottomOf="@+id/buttonStock"
+            app:layout_constraintEnd_toStartOf="@+id/buttonStock"
+            app:layout_constraintTop_toTopOf="@+id/buttonStock"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:text="100 TL"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="34sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/textAddBacket"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textAddBacket"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <Button
+            android:id="@+id/textAddBacket"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="24dp"
+            android:layout_marginBottom="128dp"
+            android:backgroundTint="#2196F3"
+            android:text="Sepete Ekle"
+            android:textSize="24sp"
+            app:cornerRadius="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/textUrunDetay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="48dp"
+            android:text="Ürün Detayı"
+            android:textSize="28dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/imageDetail"
+            app:layout_constraintEnd_toStartOf="@+id/buttonDetayHeart"
+            app:layout_constraintHorizontal_bias="0.269"
+            app:layout_constraintStart_toEndOf="@+id/buttonDetayClose"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

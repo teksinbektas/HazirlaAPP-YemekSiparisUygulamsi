@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+        name="viewModel"
+        type="com.example.bitirmeprojesi.ui.viewmodel.MainFragmentViewModel" />
+        <variable
+            name="anasayfaFragment"
+            type="com.example.bitirmeprojesi.ui.fragment.MainFragment" />
+
+        <variable
+            name="mealsadapter"
+            type="com.example.bitirmeprojesi.ui.adapter.MealsAdapter"/>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".ui.fragment.MainFragment">
+
+        <SearchView
+            android:id="@+id/searchView"
+            android:layout_width="370dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="104dp"
+            android:background="#FDFCFC"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.487"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="250dp"
+            android:layout_height="63dp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="24dp"
+            android:fontFamily="@font/lobster_two"
+            android:text="HazırlaApp"
+            android:textAlignment="center"
+            android:textColor="@color/turuncu"
+            android:textColorLink="@color/turuncu"
+            android:textSize="48sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/searchView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="480dp"
+            android:layout_marginBottom="72dp"
+            android:adapter="@{mealsadapter}"
+            android:orientation="vertical"
+            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.038"
+            app:layout_constraintStart_toStartOf="parent"
+            app:spanCount="2">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
